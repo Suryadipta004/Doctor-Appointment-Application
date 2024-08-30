@@ -1,0 +1,57 @@
+/* Doctor Card Hover Effect */
+.doctor-card {
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    padding: 10px;
+  }
+  
+  .doctor-card:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Doctor Image */
+  .doctor-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+  }
+  
+  /* Card Header Styling */
+  .card-header {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .doctor-img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  /* CSS */
+.pbtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 50px; /* Adjust as needed */
+  height: 50px; /* Adjust as needed */
+  background-color: #f0f0f0; /* Optional: background color */
+}
+
+.pbtn.profile img {
+  width: 100%;
+  display: block;
+  height: 54px;
+  padding: 6px;
+}
+
+.profile.active {
+  border: 2px solid #007bff; /* Example active border color */
+}
+

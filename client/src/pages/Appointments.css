@@ -1,0 +1,66 @@
+/* Appointments.css */
+
+.appointments-card {
+    margin: 20px;
+    padding: 20px;
+    background: linear-gradient(135deg, #e0f7fa, #fff);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  /* .appointments-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  } */
+  
+  .text-center {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .appointments-table {
+    margin-top: 20px;
+  }
+  
+  .ant-table-thead > tr > th {
+    background-color: #06294e;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .ant-table-tbody > tr > td {
+    text-align: center;
+  }
+  
+  .ant-tag {
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .ant-tag:hover {
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+  }
+  .appointments-card {
+    margin: 20px;
+    padding: 20px;
+    background: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+
+  
+  .subtitle {
+    font-size: 16px;
+    color: #666;
+    margin-top: 10px;
+  }

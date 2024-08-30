@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 75vh;
+  }
+  
+  .booking-card {
+    background: linear-gradient(135deg, #e9ecef, #f8f9fa);
+    border-radius: 15px;
+  }
+  
+  .doctor-info h4, .doctor-info h5 {
+    display: flex;
+    align-items: center;
+  }
+  
+  .doctor-info i {
+    margin-right: 10px;
+  }
+  
+  .date-picker, .time-picker {
+    border-radius: 10px;
+    border: 1px solid #ced4da;
+  }
+  
+  .btn {
+    width: 100%;
+    border-radius: 50px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .btn:hover {
+    transform: scale(1.05);
+  }
+  

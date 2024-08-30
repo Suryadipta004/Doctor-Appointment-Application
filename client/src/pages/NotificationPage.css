@@ -1,0 +1,124 @@
+/* General Layout Styles */
+.notification-page {
+    background-color: #f0f2f5;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  /* Heading Styles */
+  .notification-page h4 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #4a90e2;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+.notification-heading {
+    font-size: 28px;
+    font-weight: bold;
+    color: #4a90e2;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 10px 0;
+    /* border-bottom: 2px solid #4a90e2; */
+  }
+  
+  /* Tabs Styling */
+  .ant-tabs-nav-wrap {
+    /* background: linear-gradient(135deg, #6a11cb, #2575fc); */
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .ant-tabs-tab {
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 16px;
+  }
+  
+  .ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: #ffffff;
+  }
+  
+  .ant-tabs-ink-bar {
+    background: #ff6a00;
+  }
+  
+  /* Buttons */
+  .ant-btn-primary {
+    background-color: #4a90e2;
+    border: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .ant-btn-primary:hover {
+    background-color: #357abd;
+  }
+  
+  .ant-btn-danger {
+    background-color: #ff6a00;
+    border: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .ant-btn-danger:hover {
+    background-color: #d95500;
+  }
+  
+  /* Notification Cards */
+  .card {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .card:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  .card-body {
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  /* Empty State Styling */
+  .ant-empty {
+    margin-top: 50px;
+  }
+  
+  .ant-empty-image {
+    filter: grayscale(100%);
+    opacity: 0.6;
+  }
+  
+  .ant-empty-description {
+    font-size: 16px;
+    color: #777;
+  }
+  
+  /* Responsive Enhancements */
+  @media (max-width: 768px) {
+    .notification-page h4 {
+      font-size: 24px;
+    }
+  
+    .ant-tabs-tab {
+      font-size: 14px;
+    }
+  
+    .card-body {
+      font-size: 14px;
+    }
+  }
+  
