@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react";
 import Layout from "./../../components/Layout";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
-import { Col, Form, Input, Row, TimePicker, message } from "antd";
+import { Col, Form, Input, Row, TimePicker, Button, message } from "antd";
 import { useSelector, useDispatch } from "react-redux";
 import { showLoading, hideLoading } from "../../redux/features/alertSlice";
 import moment from "moment";
+import "../doctor/Profile.css";
 
 const Profile = () => {
   const { user } = useSelector((state) => state.user);
@@ -38,12 +39,12 @@ const Profile = () => {
         message.success(res.data.message);
         navigate("/");
       } else {
-        message.error(res.data.success);
+        message.error(res.data.message || "Failed to update profile.");
       }
     } catch (error) {
       dispatch(hideLoading());
-      console.log(error);
-      message.error("Something Went Wrong ");
+      console.error(error);
+      message.error("An error occurred while updating profile.");
     }
   };
 
@@ -60,9 +61,12 @@ const Profile = () => {
       );
       if (res.data.success) {
         setDoctor(res.data.data);
+      } else {
+        message.error(res.data.message || "Failed to fetch doctor info.");
       }
     } catch (error) {
-      console.log(error);
+      console.error(error);
+      message.error("An error occurred while fetching doctor info.");
     }
   };
 
@@ -87,106 +91,104 @@ const Profile = () => {
             ],
           }}
         >
-          <h4>Personal Details : </h4>
+          <h4>Personal Details:</h4>
           <Row gutter={20}>
-            <Col xs={24} md={24} lg={8}>
+            <Col xs={24} md={12} lg={8}>
               <Form.Item
                 label="First Name"
                 name="firstName"
-                required
-                rules={[{ required: true }]}
+                rules={[{ required: true, message: 'Please input your first name!' }]}
               >
-                <Input type="text" placeholder="your first name" />
+                <Input placeholder="Your first name" />
               </Form.Item>
             </Col>
-            <Col xs={24} md={24} lg={8}>
+            <Col xs={24} md={12} lg={8}>
               <Form.Item
                 label="Last Name"
                 name="lastName"
-                required
-                rules={[{ required: true }]}
+                rules={[{ required: true, message: 'Please input your last name!' }]}
               >
-                <Input type="text" placeholder="your last name" />
+                <Input placeholder="Your last name" />
               </Form.Item>
             </Col>
-            <Col xs={24} md={24} lg={8}>
+            <Col xs={24} md={12} lg={8}>
               <Form.Item
                 label="Phone No"
                 name="phone"
-                required
-                rules={[{ required: true }]}
+                rules={[{ required: true, message: 'Please input your contact number!' }]}
               >
-                <Input type="text" placeholder="your contact no" />
+                <Input type="tel" placeholder="Your contact number" />
               </Form.Item>
             </Col>
-            <Col xs={24} md={24} lg={8}>
+            <Col xs={24} md={12} lg={8}>
               <Form.Item
                 label="Email"
                 name="email"
-                required
-                rules={[{ required: true }]}
+                rules={[
+                  { required: true, message: 'Please input your email address!' },
+                  { type: 'email', message: 'Please enter a valid email address!' },
+                ]}
               >
-                <Input type="email" placeholder="your email address" />
+                <Input type="email" placeholder="Your email address" />
               </Form.Item>
             </Col>
-            <Col xs={24} md={24} lg={8}>
+            <Col xs={24} md={12} lg={8}>
               <Form.Item label="Website" name="website">
-                <Input type="text" placeholder="your website" />
+                <Input placeholder="Your website (optional)" />
               </Form.Item>
             </Col>
-            <Col xs={24} md={24} lg={8}>
+            <Col xs={24} md={12} lg={8}>
               <Form.Item
                 label="Address"
                 name="address"
-                required
-                rules={[{ required: true }]}
+                rules={[{ required: true, message: 'Please input your clinic address!' }]}
               >
-                <Input type="text" placeholder="your clinic address" />
+                <Input placeholder="Your clinic address" />
               </Form.Item>
             </Col>
           </Row>
-          <h4>Professional Details :</h4>
+          <h4>Professional Details:</h4>
           <Row gutter={20}>
-            <Col xs={24} md={24} lg={8}>
+            <Col xs={24} md={12} lg={8}>
               <Form.Item
                 label="Specialization"
                 name="specialization"
-                required
-                rules={[{ required: true }]}
+                rules={[{ required: true, message: 'Please input your specialization!' }]}
               >
-                <Input type="text" placeholder="your specialization" />
+                <Input placeholder="Your specialization" />
               </Form.Item>
             </Col>
-            <Col xs={24} md={24} lg={8}>
+            <Col xs={24} md={12} lg={8}>
               <Form.Item
                 label="Experience"
                 name="experience"
-                required
-                rules={[{ required: true }]}
+                rules={[{ required: true, message: 'Please input your experience!' }]}
               >
-                <Input type="text" placeholder="your experience" />
+                <Input placeholder="Your experience" />
               </Form.Item>
             </Col>
-            <Col xs={24} md={24} lg={8}>
+            <Col xs={24} md={12} lg={8}>
               <Form.Item
                 label="Fees Per Consultation"
                 name="feesPerConsultation"
-                required
-                rules={[{ required: true }]}
+                rules={[{ required: true, message: 'Please input your fees per consultation!' }]}
               >
-                <Input type="text" placeholder="your fees per consultation" />
+                <Input placeholder="Your fees per consultation" />
               </Form.Item>
             </Col>
-            <Col xs={24} md={24} lg={8}>
-              <Form.Item label="Timings" name="timings" required>
+            <Col xs={24} md={12} lg={8}>
+              <Form.Item
+                label="Timings"
+                name="timings"
+                rules={[{ required: true, message: 'Please select your available timings!' }]}
+              >
                 <TimePicker.RangePicker format="HH:mm" />
               </Form.Item>
             </Col>
-            <Col xs={24} md={24} lg={8}></Col>
             <Col xs={24} md={24} lg={8}>
-              <button className="btn btn-primary form-btn" type="submit">
+              <Button type="primary" htmlType="submit" className="form-btn">
                 Update
-              </button>
+              </Button>
             </Col>
           </Row>
         </Form>

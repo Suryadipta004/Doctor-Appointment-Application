@@ -1,0 +1,90 @@
+.vitality-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #6dd5ed, #2193b0);
+}
+
+.vitality-card {
+  padding: 40px;
+  /* border-radius: 20px; */
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+  background-color: #ffffff;
+  /* transition: transform 0.4s ease, box-shadow 0.4s ease; */
+  /* border: 2px solid #007acc; */
+}
+
+
+
+.vitality-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #007acc;
+  text-align: center;
+  margin-bottom: 10px;
+  background: -webkit-linear-gradient(45deg, #007acc, #00b4db);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.vitality-subtitle {
+  text-align: center;
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 30px;
+  font-style: italic;
+}
+
+.vitality-form .ant-form-item {
+  margin-bottom: 20px;
+}
+
+.vitality-form input,
+.vitality-form select {
+  border-radius: 10px;
+  padding: 12px;
+  border: 2px solid #007acc;
+  transition: all 0.3s ease;
+}
+
+.vitality-form input:focus,
+.vitality-form select:focus {
+  border-color: #00b4db;
+  /* box-shadow: 0 0 8px rgba(0, 180, 219, 0.5); */
+}
+
+.vitality-form label {
+  font-weight: bold;
+  color: #007acc;
+}
+
+.vitality-submit-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #007acc, #00b4db);
+  color: white;
+  border-radius: 10px;
+
+  font-size: 18px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.vitality-submit-btn:hover {
+  background: linear-gradient(135deg, #005c99, #007acc);
+  /* box-shadow: 0 5px 15px rgba(0, 124, 204, 0.4); */
+}
+
+.vitality-submit-btn:focus {
+  outline: none;
+  /* box-shadow: 0 0 10px rgba(0, 180, 219, 0.7); */
+}
+
+.health-icon {
+  display: block;
+  margin: 0 auto;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+}

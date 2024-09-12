@@ -1,26 +1,30 @@
 import React, { useState, useEffect } from "react";
 import Layout from "./../../components/Layout";
-
 import axios from "axios";
-
 import moment from "moment";
-import { message, Table } from "antd";
+import { message, Table, Button, Spin } from "antd";
 
 const DoctorAppointments = () => {
   const [appointments, setAppointments] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const getAppointments = async () => {
     try {
-      const res = await axios.get("/api/v1/doctor//doctor-appointments", {
+      const res = await axios.get("/api/v1/doctor/doctor-appointments", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
       });
       if (res.data.success) {
         setAppointments(res.data.data);
+      } else {
+        message.error("Failed to fetch appointments.");
       }
     } catch (error) {
       console.log(error);
+      message.error("An error occurred while fetching appointments.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -42,10 +46,12 @@ const DoctorAppointments = () => {
       if (res.data.success) {
         message.success(res.data.message);
         getAppointments();
+      } else {
+        message.error("Failed to update appointment status.");
       }
     } catch (error) {
       console.log(error);
-      message.error("Something Went Wrong");
+      message.error("An error occurred while updating status.");
     }
   };
 
@@ -72,31 +78,44 @@ const DoctorAppointments = () => {
       title: "Actions",
       dataIndex: "actions",
       render: (text, record) => (
-        <div className="d-flex">
+        <div>
           {record.status === "pending" && (
-            <div className="d-flex">
-              <button
-                className="btn btn-success"
+            <div>
+              <Button
+                type="primary"
                 onClick={() => handleStatus(record, "approved")}
               >
-                Approved
-              </button>
-              <button
-                className="btn btn-danger ms-2"
+                Approve
+              </Button>
+              <Button
+                type="danger"
                 onClick={() => handleStatus(record, "reject")}
+                style={{ marginLeft: 8 }}
               >
                 Reject
-              </button>
+              </Button>
             </div>
           )}
         </div>
       ),
     },
   ];
+
   return (
     <Layout>
-      <h1>Appoinmtnets Lists</h1>
-      <Table columns={columns} dataSource={appointments} />
+      <h1>Appointments List</h1>
+      {loading ? (
+        <div style={{ textAlign: "center", marginTop: "20px" }}>
+          <Spin size="large" />
+        </div>
+      ) : (
+        <Table
+          columns={columns}
+          dataSource={appointments}
+          rowKey="_id"
+          pagination={{ pageSize: 10 }}
+        />
+      )}
     </Layout>
   );
 };

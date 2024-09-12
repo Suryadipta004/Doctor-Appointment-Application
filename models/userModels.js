@@ -13,6 +13,15 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: [true, "password is require"],
   },
+  // age: {
+  //   type: Number,
+  //   required: [true, "Age is required"],
+  // },
+  // sex: {
+  //   type: String,
+  //   required: [true, "Sex is required"],
+  //   enum: ["male", "female", "other"],
+  // },
   isAdmin: {
     type: Boolean,
     default: false,

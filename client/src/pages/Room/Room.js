@@ -3,6 +3,9 @@ import { useParams } from 'react-router-dom';
 import { ZegoUIKitPrebuilt } from '@zegocloud/zego-uikit-prebuilt';
 // import { message } from "antd";
 import './Rooms.css';
+// import { Layout } from "antd";
+// import Layout from "../../components/Layout"
+
 const Room = () => {
         const { roomID } = useParams();
     // const navigate = useNavigate();
@@ -48,9 +51,9 @@ const Room = () => {
     // }, [roomID, navigate]);
 
     return (
-        <div className="room-page">
-            <div ref={myMeeting} style={{ height: "100%" }} />
-        </div>
+            <div className="room-page">
+                <div ref={myMeeting} style={{ height: "100%" }} />
+            </div>
     );
 };
 

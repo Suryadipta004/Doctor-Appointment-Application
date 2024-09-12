@@ -15,6 +15,7 @@ import BookingPage from "./pages/BookingPage";
 import Appointments from "./pages/Appointments";
 import DoctorAppointments from "./pages/doctor/DoctorAppointments";
 import Room from "./pages/Room/Room";
+import Vitality from "./pages/vitality";
 
 function App() {
   const { loading } = useSelector((state) => state.alerts);
@@ -127,6 +128,12 @@ function App() {
               path="/room/:roomID" 
               element= {
                 <Room/>
+              }
+            />
+            <Route 
+              path="/vitality/:id" 
+              element= {
+                <Vitality/>
               }
             />
           </Routes>

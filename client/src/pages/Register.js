@@ -1,13 +1,18 @@
 import React from "react";
 import "../styles/RegiserStyles.css";
-import { Form, Input, message } from "antd";
+import { Form, Input,  message } from "antd";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { showLoading, hideLoading } from "../redux/features/alertSlice";
+import "../pages/Register.css";
+import regImage from '../images/Signup_page_image.png'
+
 const Register = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  // const { Option } = Select;
+
   //form handler
   const onfinishHandler = async (values) => {
     try {
@@ -26,15 +31,17 @@ const Register = () => {
       message.error("Something Went Wrong");
     }
   };
+
   return (
-    <>
-      <div className="form-container ">
-        <Form
-          layout="vertical"
-          onFinish={onfinishHandler}
-          className="register-form"
-        >
-          <h3 className="text-center">Register From</h3>
+    
+    <div className="form-container">
+    <div className="form-wrapper">
+      <div className="image-section">
+        <img src={regImage} alt="Register" />
+      </div>
+      <div className="form-section">
+        <Form layout="vertical" onFinish={onfinishHandler} className="register-form">
+          <h3 className="text-center">Signup to <span>MediMap</span></h3>
           <Form.Item label="Name" name="name">
             <Input type="text" required />
           </Form.Item>
@@ -45,14 +52,16 @@ const Register = () => {
             <Input type="password" required />
           </Form.Item>
           <Link to="/login" className="m-2">
-            Already user login here
+            Already user? Login here
           </Link>
           <button className="btn btn-primary" type="submit">
             Register
           </button>
         </Form>
       </div>
-    </>
+    </div>
+  </div>
+  
   );
 };
 

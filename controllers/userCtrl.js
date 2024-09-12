@@ -79,7 +79,7 @@ const authController = async (req, res) => {
   }
 };
 
-// APpply DOctor CTRL
+// Apply DOctor CTRL
 const applyDoctorController = async (req, res) => {
   try {
     const newDoctor = await doctorModel({ ...req.body, status: "pending" });

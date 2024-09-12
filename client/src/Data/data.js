@@ -14,10 +14,20 @@ export const userMenu = [
     path: "/apply-doctor",
     icon: "fa-solid fa-user-doctor",
   },
+  // {
+  //   name: "Profile",
+  //   path: "/profile/paitent",
+  //   icon: "fa-solid fa-user",
+  // },
   {
-    name: "Profile",
-    path: "/profile",
-    icon: "fa-solid fa-user",
+    name: "Vitality",
+    path: "/vitality/:id",
+    icon: "fa-solid fa-notes-medical",
+  },
+  {
+    name: "Health Reports",
+    path: "/health-reports",
+    icon: "fa-solid fa-chart-bar",
   },
 ];
 

@@ -1,0 +1,42 @@
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .form-wrapper {
+    display: flex;
+    max-width: 800px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background-color: white;
+  }
+  
+  .image-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .image-section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .form-section {
+    flex: 1;
+    padding-left: 20px;
+  }
+  
+  .register-form {
+    max-width: 400px;
+    margin: auto;
+  }
+ h3 span{
+  color: rgb(111, 0, 255);
+  font-size: 2rem;
+ } 

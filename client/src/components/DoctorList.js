@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import profileImage from '../images/doctor.png'
 import './DoctorList.css'
 // import "bootstrap/dist/css/bootstrap.css";
-
 // import doctorImage from "../images/doctor_image.jpg"; // Make sure this path is correct
 
 const DoctorList = ({ doctor }) => {
