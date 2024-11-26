@@ -20,7 +20,6 @@ const Doctors = () => {
       console.log(error);
     }
   };
-
   // handle account
   const handleAccountStatus = async (record, status) => {
     try {
